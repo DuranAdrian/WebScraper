@@ -1,7 +1,7 @@
 import pandas
 import requests
 from bs4 import BeautifulSoup
-import time, datetime
+import time, datetime, os
 
 city = "San-Leandro"
 realtor_base_url = "https://www.realtor.com/realestateandhomes-search/%s_CA" % city
