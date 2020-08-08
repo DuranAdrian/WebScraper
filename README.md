@@ -1,4 +1,4 @@
-# WebCrawler
+# WebScraper
 Purely for education and portfolio purposes - pulls home data from realtor website.
 
 Using ScraperAPI, I built this Python program to pull data from a realtor website to view what houses are for sale without going to the webpage itself.
