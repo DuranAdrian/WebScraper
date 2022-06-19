@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import time, datetime, os
 
 city = "San-Leandro"
-realtor_base_url = "https://www.realtor.com/realestateandhomes-search/%s_CA" % city
+realtor_base_url = "https://www.realtor.com/realestateandhomes-search/%s_CA/radius-10" % city
 scraperapi_Key = "01590a15f8f16d6015858b1424fdd3ac"
 header = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" ,'referer':'https://www.google.com/'}
 
@@ -179,7 +179,7 @@ parseContent(soup, True)
 
 # Determine number of pages
 try:
-    max_pages = soup.find_all("li", {"class":"pagination-number"})[-1].text
+    max_pages = soup.find("div", {"role":"navigation"}).select("a.item, a.btn")[-2].text
     print("Total Number of pages %s" % max_pages)
     
     # if more than 1 pages loop through all
@@ -191,6 +191,14 @@ try:
 except IndexError:
     print("Index Error occurred, Data may be missing.")
     pass
+
+# Website has now changed, need to loop while Next button is active
+# Increment count manually
+# try:
+#     navigation = soup.find("div", {"role":"navigation"}).select("a.item, a.btn")[-2].text
+#     print(navigation)
+# except AttributeError:
+#     print("Error finding elements")
 
 print("Total number of successful pulled Properties: %s" % len(results_list))
 # Create csv file with all results
