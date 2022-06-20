@@ -12,5 +12,15 @@ then run 'python main.py'
 
 To view data, just open the file ending in '_PropertyResults.csv'
 
+# Weekly Sold
+The program is now able to pull recent sold properties in any given city in California.
+
+Default date range is all properties sold in the past 7 days.
+
+Run 'python WeeklySold.py' and the generated excel file is located in 'Results' Folder.
+
+(Optional) To change city location, in 'WeeklySold.py' change 'city' property to whatever city you'd like, just be sure to capitalize and add a hypen between words
+(Optional) To change how far back to pull sold properties, in 'ScraperBrain.py' change 'withinDaysSold' to how every many days you would like.
+
 # Note:
 Sometimes program may crash or unexpected error may appear. Just run again, usually does the trick.
