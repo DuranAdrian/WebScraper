@@ -24,3 +24,4 @@ Run 'python WeeklySold.py' and the generated excel file is located in 'Results' 
 
 # Note:
 Sometimes program may crash or unexpected error may appear. Just run again, usually does the trick.
+Need to add own ScraperAPI key to Network.py
